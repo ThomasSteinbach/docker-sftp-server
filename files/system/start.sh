@@ -10,7 +10,6 @@ else
   sed -i "s/CONFIG_REPLACE_PASSWORD_AUTHENTICATION/no/g" /etc/ssh/sshd_config
 fi
 
-
 if [[ -f /mount/.ssh/authorized_keys ]]; then
   chmod 0600 /mount/.ssh/authorized_keys
   chown ftp:ftp /mount/.ssh/authorized_keys
