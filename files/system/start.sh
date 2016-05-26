@@ -3,7 +3,7 @@
 chown ftp:ftp /mount/.ssh
 chown ftp:ftp /mount/data
 
-if [[ ! -z USER_PASSWORD ]]; then
+if [[ ! -z "$USER_PASSWORD" ]]; then
   echo "ftp:${USER_PASSWORD}" | chpasswd
   sed -i "s/CONFIG_REPLACE_PASSWORD_AUTHENTICATION/yes/g" /etc/ssh/sshd_config
 else
